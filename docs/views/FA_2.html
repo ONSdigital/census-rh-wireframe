@@ -1,0 +1,47 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Help and Support {% endblock %} {% block content %}
+<div class="govuk-width-container">
+    <a href="#" class="govuk-back-link">Back</a>
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form action="/form-handler" method="post" novalidate>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                  What is your home address?
+                </h1>
+				<span id="more-detail-hint" class="govuk-hint">
+    We'll send the requested product to this address
+  </span>
+                            </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="address-postcode">
+                                    <h2> Postcode </h2>
+                                </label>
+                                <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" required>
+                            </div>
+							<br> <br>
+                            <button class="govuk-button" type="button" onclick="location.href='/docs/FA_3'"> Find Address </button>
+                        </fieldset>
+						</div>
+						
+                   
+                </form>
+				<details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+      						Why do we ask this question?
+    					</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        We ask this question to help ensure that we display you the correct product list available for your region
+                    </div>
+                </details>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

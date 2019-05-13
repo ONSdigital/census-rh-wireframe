@@ -1,0 +1,20 @@
+﻿{% extends "ONS.html" %} {% set mainClasses = "govuk-main-wrapper--l" %} {% from "panel/macro.njk" import govukPanel %} {% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        {{ govukPanel({ titleText: " ", html: "Mae eich ymholiad wedi'i e-bostio
+        <br>" }) }}
+
+    <!--    <p class="govuk-body">We have sent you a confirmation email.</p> -->
+
+        <h2 class="govuk-heading-m">Beth sy'n digwydd nesaf?</h2>
+
+        <p class="govuk-body">
+            Rydym wedi anfon eich ymholiad at ein hasiant Canolfan Gyswllt. Cewch ateb <a href="/ONS_WC_OL_HP">o fewn 48 awr waith</a>.
+        </p>
+        <p class="govuk-body">
+            Byddant yn cysylltu â chi naill ai i gadarnhau eich cais, neu i ofyn am fwy o wybodaeth.
+        </p>
+
+    </div>
+</div>
+{% endblock %}

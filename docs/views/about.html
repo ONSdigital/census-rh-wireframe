@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+About - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "GOV.UK Prototype Kit",
+	      href: "/docs"
+	    }
+	  ]
+	}) }}
+{% endblock %}
+
+{% block content %}
+
+<h3 class="govuk-heading-s"><font color="red"> WARNING - PROTOTYPE FOR DISCUSSION ONLY - NOT FINAL DESIGN</font></h3>
+
+<div class="govuk-form-group" align="right">
+  <label class="govuk-label" for="sort">
+    Language
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="published">English</option>
+    <option value="updated" selected>Cymraeg</option>
+    <option value="views">Scots</option>
+  </select>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">About the Census</h1>
+
+      <p class="govuk-body-l">
+        Find out more about the history of the Census and why it is important for the UK
+      </p>
+
+      <h2 class="govuk-heading-m">What is the census</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Why is the census so important</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">How old is the census</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">How the census works</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Do all countries have a census</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Does Brexit affect the census</a></li>
+
+      </ul>
+
+
+      <h2 class="govuk-heading-m">Why we are contacting you</h2>
+
+			<ul class="govuk-list govuk-list--bullet">
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Why we need the census</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Why we need a rehearsal</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Have we called at your home</a></li>
+			</ul>
+
+			<h2 class="govuk-heading-m">Why we ask these questions</h2>
+
+			<ul class="govuk-list govuk-list--bullet">
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Household questions</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Individual questions</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Visitor questions</a></li>
+			</ul>
+
+			<h2 class="govuk-heading-m">The law</h2>
+
+			<ul class="govuk-list govuk-list--bullet">
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Census legislation and laws</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Civil liberties and Human Rights</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Census and Data Protection legislation</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Census and Freedom of Information</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Census and the Equality Act 2010</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Compliance with Welsh Language Act</a></li>
+			</ul>
+
+			<h2 class="govuk-heading-m">Our staff in your community</h2>
+
+			<ul class="govuk-list govuk-list--bullet">
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Field staff are working in some areas</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Census Coverage Survey</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Census Quality Survey</a></li>
+				<li><a href="https://ukgovernmentdigital.slack.com/messages/prototype-kit/">Field visits</a></li>
+			</ul>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,263 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<style>
+    .header__main {
+        background: #6d2a83;
+    }
+    
+    .header__top {
+        background: #6d2a83;
+    }
+    
+    .panel {
+        background: #faf4fc;
+    }
+    
+    .panel--error {
+        background: #fbecec;
+    }
+    
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    /* Button used to open the chat form - fixed at the bottom of the page */
+    
+    .open-button {
+        font-family: "nta", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 20px;
+        font-size: 1rem;
+        line-height: 1.1875;
+        box-sizing: border-box;
+        display: inline-block;
+        <!-- position: relative;
+        --> width: 100%;
+        margin-top: 0;
+        margin-bottom: 22px;
+        padding: 7px 10px;
+        border: 2px solid transparent;
+        border-radius: 0;
+        color: #ffffff;
+        background-color: #00823b;
+        box-shadow: 0 2px 0 #003618;
+        text-align: center;
+        vertical-align: top;
+        cursor: pointer;
+        -webkit-appearance: none;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+    }
+    /* The popup chat - hidden by default */
+    
+    .chat-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+    /* Add styles to the form container */
+    
+    .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+    }
+    /* Full-width textarea */
+    
+    .form-container textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        resize: none;
+        min-height: 300px;
+    }
+    /* When the textarea gets focus, do something */
+    
+    .form-container textarea:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    /* Set a style for the submit/send button */
+    
+    .form-container .btn {
+        background-color: #0f8243;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+    /* Add a red background color to the cancel button */
+    
+    .form-container .cancel {
+        background-color: blue;
+    }
+    /* Add some hover effects to buttons */
+    
+    .form-container .btn:hover,
+    .open-button:hover {
+        opacity: 1;
+    }
+</style>
+
+<h3 class="govuk-heading-s"><font color="red">WARNING - PROTOTYPE FOR DISCUSSION ONLY - NOT FINAL DESIGN</font></h3>
+
+<div class="govuk-form-group" align="right">
+  <label class="govuk-label" for="sort">
+    Language
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="english" selected>English</option>
+    <option value="welsh">Cymraeg</option>
+  </select>
+</div>
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+             Welcome to the Census
+            <!--  <span class="govuk-caption-xl">v1.02</span>
+            </h1>{{releaseVersion | log }}-->
+            <p>Welcome to RH - draft prototype for internal discussion on what to include and key information</p>
+
+
+<!--
+            <div class="govuk-inset-text">
+              There's a different form to fill in the census for <a href="/docs/HelpAndSupport">Communal Establishments</a> or
+              <a href="/docs/HelpAndSupport">if you need an Individual form</a>
+            </div>
+-->
+            <p>Placeholder text - below to start the census</p>
+            <br></br>
+
+<!--
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-heading-m">
+                    Enter your unique access code
+                  </h1>
+                </legend>
+                <span id="dob-hint" class="govuk-hint">
+                  Your 16 character access code is on the initial contact letter we sent you.
+                </span>
+                <div class="govuk-date-input" id="dob">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+<p class="venus icon--lock u-mb-m">Your information is protected by law and will be kept confidential.</p>  
+-->
+
+      <a href="/docs/Census_H" role="button" draggable="false" class="govuk-button govuk-button--start">
+        Start My Census
+      </a>
+
+<!--            <p><a href="/FA_2">I've lost my access code</a></p> -->
+
+          </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <hr>
+        <h3 class="govuk-heading-m">Support</h3>
+        <p><a href="/docs/TestContent/WhatIsTheCensus">What is the census?</a></p>
+        <p><a href="/docs/TestContent/WhyShouldITakePart">Why should I take part?</a></p>
+        <p><a href="/docs/TestContent/AllAboutTheCensus">All about the census</a></p>
+        <p><a href="/docs/TestContent/HelpWithYourForm">Help with your census form</a></p>
+        <p><a href="/docs/TestContent/KeepingDataSecure">Keeping your data secrure</a></p>
+    <!--    <p><a href="/docs/TestContent/GettingInTouch">Getting in touch</a></p>-->
+        <p><a href="/docs/HelpAndSupport">Help and Support</a></p>
+		<hr>
+		<details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+      						<b>	<strong class="govuk-tag">
+									Contact Us
+								</strong></b>
+    					</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <p> England </p>
+						<p> <b>+44 (0)800 141 2021 </b></p> 
+						<p> Wales </p>
+						<p><b>+44 (0)800 169 2021</b> </p>
+						<p>N.Ireland </p>
+						<p> <b>+44 (0)800 328 2021</b>
+						</p>
+						<p>Language</p>
+						<p> <b>+44 (0)800 587 2021 </b></p>
+                    </div>
+                </details>
+        <br></br>
+		<!--
+        <hr>
+        <h3 class="govuk-heading-m">Common support</h3>
+        <li><a href="/docs/HelpAndSupport">When to return the questionaire</a></li>
+        <li><a href="/docs/HelpAndSupport">Getting started with your questionaire</a></li>
+        <li><a href="/docs/HelpAndSupport">Away on census day</a></li>
+        <li><a href="/docs/HelpAndSupport">Lost internet access code</a></li>
+        <li><a href="/docs/HelpAndSupport">Second homes and holiday homes</a></li>
+        <li><a href="/docs/HelpAndSupport">When can I complete online</a></li>
+		
+		<hr> -->
+		<button class="govuk-button" onclick="location.href='/docs/ONS_WC_OL_HP'"><b> Web Chat </b></button>
+              
+        <button class="govuk-button" onclick="location.href='/docs/WF'"><b> Web Email </b></button>
+</div>
+    </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+
+{% endblock %}

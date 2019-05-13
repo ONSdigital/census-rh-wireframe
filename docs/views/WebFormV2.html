@@ -1,0 +1,81 @@
+{% extends "ONS.html" %}
+
+{% block pageTitle %} 
+	Web Form Email 
+{% endblock %} 
+{% block beforeContent %}
+	<a class="govuk-back-link" href="https://www.ons.gov.uk/help" target="_blank">Back</a> 
+{% endblock %} 
+
+{% block content %}
+<div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+        Title
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+        <option value="Mr.">Mr.</option>
+        <option value="Mrs." >Mrs.</option>
+        <option value="Dr.">Dr.</option>
+        <option value="Miss">Miss</option>
+		<option value="Lady">Lady</option>
+		<option value="Lord">Lord</option>
+    </select>
+</div>
+<div class="govuk-character-count" data-module="character-count" data-maxlength="50">
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="full-name">
+            Full name
+        </label>
+        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+    </div>
+    <span id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+    You can enter up to 50 characters
+  </span>
+</div>
+<div class="govuk-form-group">
+    <label class="govuk-label" for="email">
+        Email address
+    </label>
+    <span id="email-hint" class="govuk-hint">
+    We’ll only use this to send you a reply
+  </span>
+    <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+</div>
+<fieldset class="govuk-fieldset">
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="address-postcode">
+            Postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+    </div>
+	<a href="http://www.postoffice.co.uk/postcode-finder" target="_blank" type="submit" class="govuk-button">
+			Find Address
+	</a>
+</fieldset>
+<div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+        Category
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+        <option value="help">I need some help</option>
+        <option value="form" selected>I have a query about form</option>
+        <option value="technical">I have a technical question</option>
+        <option value="compliants">I have a complaint</option>
+		<option value="address">I have a query about my address</option>
+		<option value="sent">I need something sent to me</option>
+		<option value="f2f">I need face to face help</option>
+    </select>
+</div>
+<div class="govuk-form-group">
+    <label class="govuk-label" for="more-detail">
+        Description?
+    </label>
+    <span id="more-detail-hint" class="govuk-hint">
+    Please tell us in detail the issue your are facing?
+  </span>
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+<a href="http://localhost:3000/webform_success" class="govuk-button" >
+  Send
+</a>
+{% endblock %}
