@@ -1,0 +1,123 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<h3 class="govuk-heading-s"><font color="red">WARNING - PROTOTYPE FOR DISCUSSION ONLY - NOT FINAL DESIGN</font></h3>
+
+<div class="govuk-form-group" align="right">
+  <label class="govuk-label" for="sort">
+    Language
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="published">English</option>
+    <option value="updated" selected>Cymraeg</option>
+    <option value="views">Scots</option>
+  </select>
+</div>
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+
+
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+             Welcome to the census
+              <span class="govuk-caption-xl">v1.01</span>
+            </h1>{{releaseVersion | log }}
+            <p>Welcome to RH - draft prototype for internal discussion on what to include and key information</p>
+
+
+
+            <div class="govuk-inset-text">
+              There's a different form to fill in the census for <a href="/docs/HelpAndSupport">Communal Establishments</a> or
+              <a href="/docs/HelpAndSupport">if you need an Individual form</a>
+            </div>
+
+            <p>Placeholder text - below to start the census</p>
+            <br></br>
+
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-heading-m">
+                    Enter your unique access code
+                  </h1>
+                </legend>
+                <span id="dob-hint" class="govuk-hint">
+                  For example, XXXX-XXXX-XXXX-XXXX
+                </span>
+                <div class="govuk-date-input" id="dob">
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+
+
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start">
+        Start now
+      </a>
+
+            <p><a href="/docs/HelpAndSupport">I've lost my access code</a></p>
+
+          </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <hr>
+        <h3 class="govuk-heading-m">Support</h3>
+        <p><a href="/docs/TestContent/WhatIsTheCensus">What is the census?</a></p>
+        <p><a href="/docs/TestContent/WhyShouldITakePart">Why should I take part?</a></p>
+        <p><a href="/docs/TestContent/AllAboutTheCensus">All about the census</a></p>
+        <p><a href="/docs/TestContent/HelpWithYourForm">Help with your census form</a></p>
+        <p><a href="/docs/TestContent/KeepingDataSecure">Keeping your data secrure</a></p>
+        <p><a href="/docs/TestContent/GettingInTouch">Getting in touch</a></p>
+        <p><a href="/docs/HelpAndSupport">Help and Support</a></p>
+        <br></br>
+        <hr>
+        <h3 class="govuk-heading-m">Common support</h3>
+        <li><a href="/docs/HelpAndSupport">When to return the questionaire</a></li>
+        <li><a href="/docs/HelpAndSupport">Getting started with your questionaire</a></li>
+        <li><a href="/docs/HelpAndSupport">Away on census day</a></li>
+        <li><a href="/docs/HelpAndSupport">Lost internet access code</a></li>
+        <li><a href="/docs/HelpAndSupport">Second homes and holiday homes</a></li>
+        <li><a href="/docs/HelpAndSupport">When can I complete online</a></li>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+
+
+
+
+
+{% endblock %}

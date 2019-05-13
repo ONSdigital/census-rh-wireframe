@@ -1,0 +1,67 @@
+{% extends "ONS.html" %} {% block pageTitle %} Web Form Email {% endblock %} {% block beforeContent %}
+<a class="govuk-back-link" href="/docs/Census_H" target="_blank">Back</a> {% endblock %} {% block content %}
+<div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+        Title
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+        <option value="Mr.">Mr.</option>
+        <option value="Mrs.">Mrs.</option>
+        <option value="Miss">Miss</option>
+        <option value="Other">Eraill</option>
+    </select>
+</div>
+<div class="govuk-character-count" data-module="character-count" data-maxlength="50">
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="full-name">
+            Enw llawn
+        </label>
+        <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+    </div>
+    <span id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+    Gallwch roi hyd at 50 o nodau
+  </span>
+</div>
+<div class="govuk-form-group">
+    <label class="govuk-label" for="email">
+        Cyfeiriad ebost
+    </label>
+    <span id="email-hint" class="govuk-hint">
+		Byddwn ond yn defnyddio hwn i anfon ateb atoch
+  </span>
+    <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+</div>
+<fieldset class="govuk-fieldset">
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="address-postcode">
+            Cod post
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+    </div>
+    <button class="govuk-button" type="Submit" onclick="location.href='/WF_FA'"> Find Address </button>
+</fieldset>
+<div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+        Ymholiad
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+        <option value="help">Mae angen help arna i</option>
+        <option value="form" selected>Mae gen i ymholiad am ffurflen</option>
+        <option value="technical">Mae gennyf gwestiwn technegoloption>
+        <option value="compliants">Mae gen i gŵyn</option>
+        <option value="address">Mae gennyf ymholiad am fy nghyfeiriad</option>
+        <option value="sent">Mae angen rhywbeth arnaf i mi</option>
+        <option value="f2f">Mae angen help wyneb yn wyneb arnaf</option>
+    </select>
+</div>
+<div class="govuk-form-group">
+    <label class="govuk-label" for="more-detail">
+        Disgrifiad
+    </label>
+    <span id="more-detail-hint" class="govuk-hint">
+			Dywedwch wrthym yn fanwl am y mater yr ydych yn ei wynebu?
+  </span>
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+<button class="govuk-button" type="Submit" onclick="location.href='/docs/WF_SC_Cymru'"> Anfonwch </button>
+{% endblock %}

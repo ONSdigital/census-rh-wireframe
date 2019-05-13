@@ -1,0 +1,278 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Help and Support {% endblock %} {% block content %}
+<style>
+    .header__main {
+        background: #6d2a83;
+    }
+    
+    .header__top {
+        background: #6d2a83;
+    }
+    
+    .panel {
+        background: #faf4fc;
+    }
+    
+    .panel--error {
+        background: #fbecec;
+    }
+    
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    /* Button used to open the chat form - fixed at the bottom of the page */
+    
+    .open-button {
+        font-family: "nta", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 400;
+        font-size: 20px;
+        font-size: 1rem;
+        line-height: 1.1875;
+        box-sizing: border-box;
+        display: inline-block;
+        <!-- position: relative;
+        --> width: 100%;
+        margin-top: 0;
+        margin-bottom: 22px;
+        padding: 7px 10px;
+        border: 2px solid transparent;
+        border-radius: 0;
+        color: #ffffff;
+        background-color: #00823b;
+        box-shadow: 0 2px 0 #003618;
+        text-align: center;
+        vertical-align: top;
+        cursor: pointer;
+        -webkit-appearance: none;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+    }
+    /* The popup chat - hidden by default */
+    
+    .chat-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+    }
+    /* Add styles to the form container */
+    
+    .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+    }
+    /* Full-width textarea */
+    
+    .form-container textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        resize: none;
+        min-height: 300px;
+    }
+    /* When the textarea gets focus, do something */
+    
+    .form-container textarea:focus {
+        background-color: #ddd;
+        outline: none;
+    }
+    /* Set a style for the submit/send button */
+    
+    .form-container .btn {
+        background-color: #0f8243;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+    /* Add a red background color to the cancel button */
+    
+    .form-container .cancel {
+        background-color: blue;
+    }
+    /* Add some hover effects to buttons */
+    
+    .form-container .btn:hover,
+    .open-button:hover {
+        opacity: 1;
+    }
+</style>
+
+<h3 class="govuk-heading-s"><font color="red"> WARNING - PROTOTYPE FOR DISCUSSION ONLY - NOT FINAL DESIGN</font></h3>
+
+<div class="govuk-form-group" align="right">
+    <div class="govuk-grid-column-one-third"></div>
+    <label class="govuk-label" for="sort">
+        Language
+    </label>
+    <select class="govuk-select" id="sort" name="sort">
+        <option value="english"selected>English</option>
+        <option value="welsh">Cymraeg</option>
+
+    </select>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="name">
+        SEARCH
+    </label>
+    <input class="govuk-input" id="name" name="name" type="text">
+</div>
+
+<h1 class="govuk-heading-xl">Census help and support</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-s">Getting started with your form</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/docs/GettingStarted/WhoShouldFill">Who should fill it in</a></li>
+            <li><a href="/docs/GettingStarted/WhoToInclude">Who to include</a></li>
+            <li><a href="/docs/GettingStarted/WhenToDoIt">When to do it</a></li>
+            <li><a href="/docs/GettingStarted/TipsForFilling">Tips for filling in the form</a></li>
+            <li><a href="/docs/GettingStarted/AccomMans"> Accommodation managers_</a></li>
+        </ul>
+
+        <h3 class="govuk-heading-s">Extra Help</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/docs/INeed/SendMeSomething">Please send me something</a></li>
+            <li><a href="/docs/INeed/Paper_Line">Help with the questions_</a></li>
+            <li><a href="/docs/INeed/IHaveAProblem">Problems and troubleshooting</a></li>
+            <li><a href="/docs/INeed/HelpCommunity">Our staff are in your community</a></li>
+            <li><a href="/docs/INeed/HelpSomeoneElse">I want to help somebody else</a></li>
+        </ul>
+        <h3 class="govuk-heading-s">About the census</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/docs/About/WhatIsCensus">What is the census?</a></li>
+            <li><a href="/docs/About/AboutTheRehearsal">About the Rehearsal</a></li>
+            <li><a href="/docs/About/WhyWeAsk">-Why we ask these questions</a></li>
+            <li><a href="/docs/About/TheLaw">The law</a></li>
+            <li><a href="/docs/About/PrivacySecurity">Privacy and security</a></li>
+        </ul>
+
+        <h3 class="govuk-heading-s">Accessibility and languages</h3>
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="/docs/Accessibility/HelpAccess">Help in accessible formats</a></li>
+            <ol class="govuk-list govuk-list--bullet">
+                <li>
+                    <a href="/docs/Accessibility/HelpAccess">BSL,</a> &nbsp;
+                    <a href="/docs/Accessibility/HelpAccess">Easy Read,</a>&nbsp;
+                    <a href="/docs/Accessibility/HelpAccess">Braille</a>
+                </li>
+                <li>
+                    <a href="/docs/Accessibility/HelpAccess">Other formats</a>
+                </li>
+            </ol>
+            <li><a href="/docs/Accessibility/Languages">Help in other languages</a></li>
+            <ol class="govuk-list govuk-list--bullet">
+                <li>
+                    <a href="/docs/Accessibility/Languages">Cymraeg,</a>&nbsp;
+                    <a href="/docs/Accessibility/Languages">Urdu,</a>&nbsp;
+                    <a href="/docs/Accessibility/Languages">Polskie</a>
+                </li>
+                <li><a href="/docs/Accessibility/Languages">More languages</a></li>
+            </ol>
+        </ul>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+        <h3 class="govuk-heading-s">Related content</h3>
+        <li><a href="/docs/TestContent/WhatIsTheCensus">What is the census?</a></li>
+        <li><a href="/docs/TestContent/WhyShouldITakePart">Why should I take part?</a></li>
+        <li><a href="/docs/TestContent/AllAboutTheCensus">All about the census</a></li>
+        <li><a href="/docs/TestContent/HelpWithYourForm">Help with your census form</a></li>
+        <li><a href="/docs/TestContent/KeepingDataSecure">Keeping your data secrure</a></li>
+        <li><a href="/docs/TestContent/GettingInTouch">Getting in touch</a></li>
+        <hr>
+        <h3 class="govuk-heading-s">Top 5 pages</h3>
+        <li><a href="/docs/GettingStarted/WhenToDoIt">When to return the questionaire</a></li>
+        <li><a href="/docs/HelpAndSupport">Away on census day</a></li>
+        <li><a href="/docs/HelpAndSupport">Lost internet access code</a></li>
+        <li><a href="/docs/HelpAndSupport">Second homes and holiday homes</a></li>
+        <li><a href="/docs/HelpAndSupport">When can I complete online</a></li>
+        <hr>
+        <h3 class="govuk-heading-s">Requests</h3>
+        <h4><a href="/FA_1">Access Code for Household</a></h4>
+        <h4><a href="/FA_1">Access Code for Household Individual</a></h4>
+        <hr>
+        <div class="govuk-grid-column-two-third">
+
+            <h3 class="govuk-heading-s">Census Support </h3>
+            <button class="govuk-button" onclick="openForm()"><b> Web Chat </b></button>
+
+            <div class="chat-popup" id="myForm">
+                <form action="/ONS_WC_Serco" class="form-container">
+                    <h1>Census Chat</h1>
+                    <label class="govuk-label" for="msg"><b>What is your name?</b></label>
+                    <input class="govuk-input" type="text" placeholder="Enter Name" name="name" required> &nbsp
+
+                    <label class="govuk-label" for="email">
+                        <b> Email address </b>
+                    </label>
+                    <input class="govuk-input" id="email" name="email" type="email" placeholder="Enter Email" aria-describedby="email-hint" autocomplete="email" spellcheck="false" required> &nbsp
+
+                    <label class="govuk-label" for="country">
+                        <b>Country</b>
+                    </label>
+                    <select class="govuk-select" id="country" name="country" required>
+                        <option value="GB-ENG">England (GB-ENG)</option>
+                        <option value="GB-WLS">Wales (GB-WLS)</option>
+                        <option value="GB-NIR">Northern Ireland (GB-NIR)</option>
+                    </select>
+
+                    <label class="govuk-label" for="sort">
+                        <b>Query</b>
+                    </label>
+                    <select class="govuk-select" id="sort" name="query" required>
+                        <option value="help">I need some help</option>
+                        <option value="form">I have a query about form</option>
+                        <option value="technical">I have a technical question</option>
+                        <option value="compliants">I have a complaint</option>
+                        <option value="address">I have a query about my address</option>
+                        <option value="sent">I need something sent to me</option>
+                        <option value="f2f">I need face to face help</option>
+                    </select>
+                    &nbsp
+
+                    <button type="submit" class="btn">Send</button>
+
+                    <button type="button" class="btn Cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+        </script>
+
+        <button class="govuk-button" onclick="location.href='/WF'"><b> Web Email </b></button>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Help and Support
+{% endblock %}
+
+{% block content %}
+
+<h3 class="govuk-heading-s"><font color="red"> WARNING - PROTOTYPE FOR DISCUSSION ONLY - NOT FINAL DESIGN</font></h3>
+
+<div class="govuk-form-group" align="right">
+   <div class="govuk-grid-column-one-third"></div>
+  <label class="govuk-label" for="sort">
+    Language
+  </label>
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="published">English</option>
+    <option value="updated" selected>Cymraeg</option>
+    <option value="views">Scots</option>
+  </select>
+</div>
+
+
+
+  <h1 class="govuk-heading-xl">Getting in touch</h1>
+  <p>Placeholder text for help and information</p>
+
+  <p>You don’t need to do anything yet – we’ll be in touch with you when the time comes. Then, there’ll be a contact centre with our staff ready to answer your questions on the phone, email, webchat and social.</p>
+  <p>In the meantime, if you have any questions, we’d be happy to help. Here’s how you can get in touch.<p>
+
+  <h2 class="govuk-heading-m">Public:</h2>
+  <p>Social Twitter (handle TBC)</p>
+  <p>Facebook (handle TBC)</p>
+  <h3 class="govuk-heading-s">Email</h3>
+  <p><a href="/docs/ContactUs">census.customerservices@ons.gov.uk</a></p>
+  <h3 class="govuk-heading-s">Phone</h3>
+  <p>Tel: +44 (0)1329 444972</p>
+  <p>We’re available 9am to 4pm Monday to Friday.</p>
+  <h2 class="govuk-heading-m">Media</h2>
+  <h3 class="govuk-heading-s">Phone</h3>
+  <p>Contact our Media Relations Office on +44 (0)845 604 1858 or +44 (0)203 684 5070</p>
+  <p>We’re available 8:30am to 5:30pm Monday to Friday.</p>
+  <p>Emergency out of hours (limited service): +44 (0)7867 906553</p>
+  <h3 class="govuk-heading-s">Email:</h3>
+  <p><a href="/docs/ContactUs">media.relations@ons.gov.uk</a></p>
+  <p>If you’re not from the media, please use our public contact details.</p>
+
+
+{% endblock %}

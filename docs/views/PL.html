@@ -1,0 +1,66 @@
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK Help and Support {% endblock %} {% block content %}
+<div class="govuk-width-container">
+    <a href="/FA_1" class="govuk-back-link">Back</a>
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form action="/DL" method="post" novalidate>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                 What do you need?
+                </h1>
+                            </legend>
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="product-list-1" name="Product-List" type="radio" value="Paper Questionnaire">
+                                    <label class="govuk-label govuk-radios__label" for="product-list-1">
+                                        Paper Questionnaire
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="product-list-2" name="Product-List" type="radio" value="UAC">
+                                    <label class="govuk-label govuk-radios__label" for="product-list-2">
+                                        Access Code - Postal
+                                    </label>
+                                </div>
+								<div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="product-list-3" name="Product-List" type="radio" value="UAC">
+                                    <label class="govuk-label govuk-radios__label" for="product-list-3">
+                                        Access Code - SMS
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="product-list-4" name="Product-List" type="radio" value="Supplimentary Materials">
+                                    <label class="govuk-label govuk-radios__label" for="product-list-4">
+                                        Translation Booklets
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+				<details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+      						What should you select?
+    					</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Select a product from the list of products available for your region
+                    </div>
+                </details>
+            </div>
+            
+
+        </div>
+    </main>
+</div>
+{% endblock %}

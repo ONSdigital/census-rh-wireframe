@@ -1,0 +1,123 @@
+{% extends "ONS.html" %}
+
+{% block pageTitle %} 
+	Web Form Email 
+{% endblock %} 
+{% block beforeContent %}
+	<a class="govuk-back-link" href="/WF" >Back</a> 
+{% endblock %} 
+
+{% block content %}
+
+<html 
+
+<main id="wrapper" role="main">
+    <div id="content">
+      
+    
+
+
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="column-two-thirds">
+      <div class="page-heading">
+        <h1 class="govuk-heading-l"  >
+          Select your address
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row select-address-list-block">
+   
+      
+
+<form action="/personal-account/your-address/sole/select-address?postcode=BH1+3pe" method="POST" class="select-address-form" id="select-address-form">
+    <input type="hidden" name="csrfToken" value="e779db30d0391b28f85b5b6dfb5b9d9cf6c8f139-1553885179013-d90537e1aa510023d3a20e73">
+    
+        <fieldset>
+         <!-- <legend class="visuallyhidden">Select your address</legend>
+            
+              <label class="govukRadios" for="radio-0">
+                <input id="radio-0" type="radio" name="addressId" value="GB100040725825" data-line1="50-52" data-line2="Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                50-52,Christchurch Road, Bournemouth, BH1 3PE
+              </label>-->
+            <div
+              <label class="govuk-radios__item" for="radio-1">
+                <input id="radio-1" type="radio" name="addressId" value="GB100040726159" data-line1="Flat 1, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 1, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+            </div>
+              <div
+              <label class="govuk-radios__item" for="radio-12">
+                <input id="radio-12" type="radio" name="addressId" value="GB100040726160" data-line1="Flat 2, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 2, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+			</div>  
+            <div
+                 
+              <label class="govuk-radios__item" for="radio-18">
+                <input id="radio-18" type="radio" name="addressId" value="GB100040726161" data-line1="Flat 3, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 3, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+            </div>
+			<div
+              <label class="govuk-radios__item" for="radio-19">
+                <input id="radio-19" type="radio" name="addressId" value="GB100040726162" data-line1="Flat 4, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 4, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+            </div>
+			<div
+              <label class="govuk-radios__item" for="radio-20">
+                <input id="radio-20" type="radio" name="addressId" value="GB100040726163" data-line1="Flat 5, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 5, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+            </div>
+			<div
+              <label class="govuk-radios__item" for="radio-21">
+                <input id="radio-21" type="radio" name="addressId" value="GB100040726164" data-line1="Flat 6, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 6, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+            </div>
+			<div
+              <label class="govuk-radios__item" for="radio-22">
+                <input id="radio-22" type="radio" name="addressId" value="GB100040726165" data-line1="Flat 7, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 7, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+            </div>
+			<div
+              <label class="govuk-radios__item" for="radio-23">
+                <input id="radio-23" type="radio" name="addressId" value="GB100040726166" data-line1="Flat 8, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 8, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+            </div>
+			<div
+              <label class="govuk-radios__item" for="radio-24">
+                <input id="radio-24" type="radio" name="addressId" value="GB100040726167" data-line1="Flat 9, Lansdowne Court" data-line2="42 Christchurch Road" data-line3="Bournemouth" data-line4="" data-postcode="BH1 3PE" data-type="" data-etag="">
+                Flat 9, Lansdowne Court,42 Christchurch Road, Bournemouth, BH1 3PE
+              </label>
+            </div>
+              
+          
+            
+        </fieldset>
+		</form>
+     
+<a href="\WF_AC" class="govuk-button" >
+		Continue
+		</a>
+
+		
+      
+
+
+
+  </div>
+
+
+</body>
+</html>
+{% endblock %}

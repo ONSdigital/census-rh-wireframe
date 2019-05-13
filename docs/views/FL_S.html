@@ -1,0 +1,27 @@
+{% extends "ONS.html" %}
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "panel/macro.njk" import govukPanel %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: " ",
+        html: "Your request has been submitted<br>"
+      }) }}
+
+    <!--  <p class="govuk-body">We have sent you a confirmation email.</p> -->
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        You should receive a SMS for the access code to mobile number provided by you. You will get a reply in 24 hours.
+      </p>
+    <!--  <p class="govuk-body">
+        They will contact you either to confirm your request, or to ask for more information.
+      </p> -->
+
+    </div>
+  </div>
+{% endblock %}
