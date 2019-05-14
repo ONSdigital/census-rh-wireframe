@@ -7,17 +7,12 @@
 {% block content %}
 
 <h3 class="govuk-heading-s"><font color="red"> WARNING - PROTOTYPE FOR DISCUSSION ONLY - NOT FINAL DESIGN</font></h3>
-
 <div class="govuk-form-group" align="right">
-   <div class="govuk-grid-column-one-third"></div>
-  <label class="govuk-label" for="sort">
-    Language
-  </label>
-  <select class="govuk-select" id="sort" name="sort">
-    <option value="published">English</option>
-    <option value="updated" selected>Cymraeg</option>
-    <option value="views">Scots</option>
-  </select>
+    <label class="govuk-label" for="sort">
+       <b> Language </b>
+    </label>
+    <button class="govuk-button" autofocus="autofocus" onclick="location.href='/docs/Census_H'">English</button>
+    <button class="govuk-button" onclick="location.href='/docs/Census_Cymru'">Cymraeg</button>
 </div>
 
 <div class="govuk-form-group">
