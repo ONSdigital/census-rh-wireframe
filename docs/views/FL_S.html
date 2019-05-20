@@ -5,23 +5,33 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column">
       {{ govukPanel({
         titleText: " ",
-        html: "Your request has been submitted<br>"
+        html: "Your new unique access code request has been successfull<br>"
       }) }}
 
     <!--  <p class="govuk-body">We have sent you a confirmation email.</p> -->
+	<div class="govuk-form-group govuk-form-group--success">
+<fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint passport-issued-error" role="group">
+    <span id="passport-issued-hint" class="govuk-hint">
+      You should receive a text message for the access code to mobile number provided by you. You will get a reply in 24 hours.
+	  
+    </span>
 
+    
+  </fieldset>
+      </div>
       <h2 class="govuk-heading-m">What happens next</h2>
 
-      <p class="govuk-body">
-        You should receive a SMS for the access code to mobile number provided by you. You will get a reply in 24 hours.
-      </p>
-    <!--  <p class="govuk-body">
-        They will contact you either to confirm your request, or to ask for more information.
-      </p> -->
+      <h3 class="govuk-body">
+        When you recieve your new unique access code, you can begin completing the census.
+      </h3>
+           <button onclick="location.href='/docs/Census_RH'" role="button" draggable="false" class="govuk-button govuk-button">
+        Start your census
+      </button>
 
-    </div>
+
+  </div>
   </div>
 {% endblock %}
