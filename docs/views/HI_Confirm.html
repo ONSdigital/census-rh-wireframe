@@ -1,0 +1,140 @@
+{% extends "layout_unbranded.html" %} {% block pageTitle %} GOV.UK Help and Support {% endblock %} {% block content %}
+<link rel="stylesheet" href="/assets/stylesheets/styles.css">
+
+<head>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-TP6B87K"></script>
+    <script type="text/javascript">
+        try {
+            document.__defineGetter__("referrer", function() {
+                return "https://www.gov.uk/check-mot-history";
+            });
+        } catch (exception) {
+            try {
+                Object.defineProperties(document, {
+                    referrer: {
+                        get: function() {
+                            return "https://www.gov.uk/check-mot-history";
+                        }
+                    }
+                });
+            } catch (exception) {}
+        }
+    </script>
+    <meta charset="utf-8">
+    <title>What is the vehicle's registration number - MOT History</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.ico?0.22.1" type="image/x-icon">
+    <link rel="mask-icon" href="/assets/images/gds/gov.uk_logotype_crown.svg?0.22.1" color="#0b0c0c">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-180x180.png?0.22.1">
+    <link rel="apple-touch-icon" sizes="167x167" href="/assets/images/apple-touch-icon-167x167.png?0.22.1">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/apple-touch-icon-152x152.png?0.22.1">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png?0.22.1">
+
+    <meta name="theme-color" content="#0b0c0c">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="/assets/images/gds/opengraph-image.png?0.22.1">
+
+    <link rel="stylesheet" href="/assets/stylesheets/styles.css">
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/javascripts/ie-shims.bundle.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        var dataLayer = [{
+            "event": "moth-application"
+        }];
+        dataLayer.push();
+    </script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TP6B87K');
+    </script>
+
+</head>
+<div class="govuk-width-container">
+    <a href="/docs/FA_4" class="govuk-back-link">Back</a>
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form action="/docs/PL_1_W" method="post" novalidate>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                  You are requesting a unique access code:
+                </h1>
+                            </legend>
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+                                        Received the initial contact letter from the Census and lost the unique code
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                        You are lodger and you haven't received a Initial Contact letter from Censes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                                        You're 18 and above and want to fill a separate census then the one filled by the memebr of your family leaving in the household
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+      						Why do we ask this question?
+    					</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        We ask this question to help ensure that we identify whether you are a Household or a Individual for generating a unique access code
+                    </div>
+                </details>
+
+            </div>
+			<div class="govuk-grid-column-one-third">
+                <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+      						Household:
+    					</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                       <li> One person living alone</li> or
+<li>A group of people (not necessarily related) living at the same address who share the cooking facilities and share a living room or sitting room or dining area</li>
+                    </div>
+                </details>
+							</div>
+
+        </div>
+
+            
+    </main>
+</div>
+{% endblock %}

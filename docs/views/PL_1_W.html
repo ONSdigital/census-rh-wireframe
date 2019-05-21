@@ -1,0 +1,55 @@
+{% extends "layout_unbranded.html" %} {% block pageTitle %} GOV.UK Help and Support {% endblock %} {% block content %}
+<head>
+</head>
+<div class="govuk-width-container">
+    <a href="/docs/FA_1" class="govuk-back-link">Back</a>
+
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+               <form action="/docs/DL_1" method="post" novalidate>
+
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                 What do you need?
+                </h1>
+                            </legend>
+                            <div class="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="product-list-3" name="Product-List" type="radio" value="UAC2" >
+                                    <label class="govuk-label govuk-radios__label" for="product-list-3">
+                                       Unique Access Code - English
+                                    </label>
+                                </div>
+								<div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="product-list-2" name="Product-List" type="radio" value="UAC1" >
+                                    <label class="govuk-label govuk-radios__label" for="product-list-2">
+                                        Unique Access Code - Welsh
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+               <button type="submit" class="govuk-button">
+                        Continue
+                    </button>
+                </form>
+				<details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+      						What should you select?
+    					</span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Select a product from the list of products available for your region
+                    </div>
+                </details>
+            </div>
+            
+
+        </div>
+    </main>
+</div>
+{% endblock %}
