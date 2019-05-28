@@ -135,7 +135,7 @@
 				Croeso i'r Cyfrifiad (www.cyfrifiad.gov.uk)
             <p>Croeso i brototeip drafft RH - ar gyfer trafodaeth fewnol ar beth i'w gynnwys a gwybodaeth allweddol</p>
             <p>Testun deiliaid lleoedd - isod i ddechrau'r cyfrifiad</p>
-      <a href="Census_RH" role="button" draggable="false" class="govuk-button govuk-button--start">
+      <a href="Census_RH_Cymru" role="button" draggable="false" class="govuk-button govuk-button--start">
         Dechrau Fy Nghyfrifiad
       </a>
 
@@ -174,7 +174,60 @@
                     </div>
                 </details>
         <br></br>
-		
+		<button class="govuk-button" onclick="openForm()"><b> Sgwrs Gwe </b></button>
+
+            <div class="chat-popup" id="myForm">
+                <form action="/ONS_WC_Serco" class="form-container">
+                    <h1> Sgwrs y Cyfrifiad</h1>
+                <label class="govuk-label" for="msg"><b>Beth yw dy enw?</b></label>
+                <input class="govuk-input" type="text" placeholder="Enter Name" name="name" required> &nbsp
+
+                <label class="govuk-label" for="email">
+                    <b> Cyfeiriad ebost </b>
+                </label>
+                <input class="govuk-input" id="email" name="email" type="email" placeholder="Enter Email" aria-describedby="email-hint" autocomplete="email" spellcheck="false" required> &nbsp
+
+                <label class="govuk-label" for="country">
+                    <b>Gwlad</b>
+                </label>
+                <select class="govuk-select" id="country" name="country" required>
+                    <option value="GB-ENG">England (GB-ENG)</option>
+                    <option value="GB-WLS">Wales (GB-WLS)</option>
+                    <option value="GB-NIR">Northern Ireland (GB-NIR)</option>
+                </select>
+                &nbsp
+                <label class="govuk-label" for="sort">
+                    <b> Ymholiad</b>
+                </label>
+                <select class="govuk-select" id="sort" name="query" required>
+                    <option value="help">Mae angen help arna i</option>
+                    <option value="form">Mae gen i ymholiad am ffurflen</option>
+                    <option value="technical">Mae gennyf gwestiwn technegol</option>
+                    <option value="compliants">Mae gen i gŵyn</option>
+                    <option value="address">Mae gennyf ymholiad am fy nghyfeiriad</option>
+                    <option value="sent">Mae angen rhywbeth arnaf i mi</option>
+                    <option value="f2f">Mae angen help wyneb yn wyneb arnaf</option>
+                </select>
+                &nbsp
+
+                <button type="submit" class="btn">Anfonwch</button>
+
+                <button type="button" class="btn Cancel" onclick="closeForm()">Caewch</button>
+                </form>
+            </div>
+
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+                    document.getElementById("myForm").style.display = "none";
+                }
+            </script>
+
+            <button class="govuk-button" onclick="location.href='/docs/WF_Cymru'"><b> E-bost Gwe </b></button>
+        </div>
 </div>
 </div>
 </div>
