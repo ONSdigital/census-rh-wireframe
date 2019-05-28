@@ -1,0 +1,228 @@
+{% extends "layout_unbranded.html" %}
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+{% block content %}
+<style>
+   .header__main {
+   background: #6d2a83;
+   }
+   .header__top {
+   background: #6d2a83;
+   }
+   .panel {
+   background: #faf4fc;
+   }
+   .panel--error {
+   background: #fbecec;
+   }
+   body {
+   font-family: Arial, Helvetica, sans-serif;
+   }
+   * {
+   box-sizing: border-box;
+   }
+   /* Button used to open the chat form - fixed at the bottom of the page */
+   .open-button {
+   font-family: "nta", Arial, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-weight: 400;
+   font-size: 20px;
+   font-size: 1rem;
+   line-height: 1.1875;
+   box-sizing: border-box;
+   display: inline-block;
+   <!-- position: relative;
+      --> width: 100%;
+   margin-top: 0;
+   margin-bottom: 22px;
+   padding: 7px 10px;
+   border: 2px solid transparent;
+   border-radius: 0;
+   color: #ffffff;
+   background-color: #00823b;
+   box-shadow: 0 2px 0 #003618;
+   text-align: center;
+   vertical-align: top;
+   cursor: pointer;
+   -webkit-appearance: none;
+   position: fixed;
+   bottom: 23px;
+   right: 28px;
+   width: 280px;
+   }
+   /* The popup chat - hidden by default */
+   .chat-popup {
+   display: none;
+   position: fixed;
+   bottom: 0;
+   right: 15px;
+   border: 3px solid #f1f1f1;
+   z-index: 9;
+   }
+   /* Add styles to the form container */
+   .form-container {
+   max-width: 300px;
+   padding: 10px;
+   background-color: white;
+   }
+   /* Full-width textarea */
+   .form-container textarea {
+   width: 100%;
+   padding: 15px;
+   margin: 5px 0 22px 0;
+   border: none;
+   background: #f1f1f1;
+   resize: none;
+   min-height: 300px;
+   }
+   /* When the textarea gets focus, do something */
+   .form-container textarea:focus {
+   background-color: #ddd;
+   outline: none;
+   }
+   /* Set a style for the submit/send button */
+   .form-container .btn {
+   background-color: #0f8243;
+   color: white;
+   padding: 16px 20px;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+   margin-bottom: 10px;
+   opacity: 0.8;
+   }
+   /* Add a red background color to the cancel button */
+   .form-container .cancel {
+   background-color: blue;
+   }
+   /* Add some hover effects to buttons */
+   .form-container .btn:hover,
+   .open-button:hover {
+   opacity: 1;
+   }
+</style>
+<h3 class="govuk-heading-s"><font color="red">WARNING - PROTOTYPE FOR DISCUSSION ONLY - NOT FINAL DESIGN</font></h3>
+<div class="govuk-form-group" align="right">
+   <label class="govuk-label" for="sort">
+   <b> Language </b>
+   </label>
+   <button class="govuk-button" onclick="location.href='/docs/Census_RH'">English</button>
+   <button class="govuk-button" autofocus="autofocus" onclick="location.href='/docs/Census_RH_Cymru'">Cymraeg</button>
+</div>
+<div class="govuk-width-container">
+   <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+         <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                     <h1 class="govuk-heading-m">
+                        Rhowch eich cod mynediad unigryw
+                     </h1>
+                  </legend>
+                  <span id="dob-hint" class="govuk-hint">
+                  Mae eich 16 cod mynediad cymeriad ar y llythyr cyswllt cychwynnol a anfonwyd atoch.
+                  </span>
+                  <div class="govuk-date-input" id="dob">
+                     <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                           <input class="govuk-input --width-16" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+                        </div>
+                     </div>
+               </fieldset>
+               </div>
+               <p class="venus icon--lock u-mb-m">Caiff eich gwybodaeth ei diogelu gan y gyfraith a chaiff ei chadw'n gyfrinachol.</p>
+               <a href="/docs/RH_LR_1" role="button" draggable="false" class="govuk-button govuk-button--start">
+               Dechreuwch nawr
+               </a>
+               <p><a href="/docs/FA_2">Rwyf wedi colli fy nghod mynediad</a></p>
+            </div>
+            <div class="govuk-grid-column-one-third">
+               <hr>
+               <h3 class="govuk-heading-m">Cefnogaeth</h3>
+               <p><a href="/docs/TestContent/WhatIsTheCensus">Beth yw'r cyfrifiad?</a></p>
+               <p><a href="/docs/TestContent/WhyShouldITakePart">Pam ddylwn i gymryd rhan?</a></p>
+               <p><a href="/docs/TestContent/AllAboutTheCensus">Popeth am y cyfrifiad</a></p>
+               <p><a href="/docs/TestContent/HelpWithYourForm">Helpwch gyda'ch ffurflen cyfrifiad</a></p>
+               <p><a href="/docs/TestContent/KeepingDataSecure">Cadw eich data yn ddiogel</a></p>
+               <!--    <p><a href="/docs/TestContent/GettingInTouch">Getting in touch</a></p>-->
+               <p><a href="/docs/HelpAndSupport">Cymorth a Chymorth</a></p>
+               <hr>
+               <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                     <span class="govuk-details__summary-text">
+                     <b>	<strong class="govuk-tag">
+                     Cysylltwch â ni
+                     </strong></b>
+                     </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                     <p> Lloegr </p>
+                     <p> <b>+44 (0)800 141 2021 </b></p>
+                     <p> Cymru </p>
+                     <p><b>+44 (0)800 169 2021</b> </p>
+                     <p> Gogledd Iwerddon </p>
+                     <p> <b>+44 (0)800 328 2021</b>
+                     </p>
+                     <p>Iaith</p>
+                     <p> <b>+44 (0)800 587 2021 </b></p>
+                  </div>
+               </details>
+               <br></br>
+               <button class="govuk-button" onclick="openForm()"><b> Sgwrs Gwe </b></button>
+               <div class="chat-popup" id="myForm">
+                  <form action="/docs/ONS_WC_Serco" class="form-container">
+                     <h1>Sgwrs y Cyfrifiad</h1>
+                     <label class="govuk-label" for="msg"><b>Beth yw dy enw?</b></label>
+                     <input class="govuk-input" type="text" placeholder="Enter Name" name="name" required> &nbsp
+                     <label class="govuk-label" for="email">
+                     <b> Cyfeiriad ebost </b>(dewisol)
+                     </label>
+                     <input class="govuk-input" id="email" name="email" type="email" placeholder="Enter Email" aria-describedby="email-hint" autocomplete="email" spellcheck="false" required> &nbsp
+                     <ul class="govuk-list" >
+                     <li><a href="/docs/RH_LR_1">Darllenwch Hysbysiad Preifatrwydd</a></li>
+                     &nbsp
+                     <label class="govuk-label" for="country">
+                     <b>Gwlad</b>
+                     </label>
+                     <select class="govuk-select" id="country" name="country" required>
+                        <option value="GB-ENG">Lloegr (GB-ENG)</option>
+                        <option value="GB-WLS">Cymru (GB-WLS)</option>
+                        <option value="GB-NIR">Gogledd Iwerddon(GB-NIR)</option>
+                     </select>
+                     <label class="govuk-label" for="sort">
+                     <b>Ymholiad</b>
+                     </label>
+                     <select class="govuk-select" id="sort" name="query" required>
+                        <option value="help">Mae angen help arna i</option>
+                        <option value="form">Mae gen i ymholiad am ffurflen</option>
+                        <option value="technical">Mae gennyf gwestiwn technegol</option>
+                        <option value="compliants">Mae gen i gŵyn</option>
+                        <option value="address">Mae gennyf ymholiad am fy nghyfeiriad</option>
+                        <option value="sent">Mae angen rhywbeth arnaf i mi</option>
+                        <option value="f2f">Mae angen help wyneb yn wyneb arnaf</option>
+                     </select>
+                     &nbsp
+                     <button type="submit" class="btn">Anfonwch</button>
+                     <button type="button" class="btn Cancel" onclick="closeForm()">Caewch</button>
+                  </form>
+               </div>
+               <script>
+                  function openForm() {
+                      document.getElementById("myForm").style.display = "block";
+                  }
+                  
+                  function closeForm() {
+                      document.getElementById("myForm").style.display = "none";
+                  }
+               </script>
+               <button class="govuk-button" onclick="location.href='/docs/WF'"><b> E-bost Gwe</b></button>
+            </div>
+         </div>
+      </div>
+</div>
+</main>
+</div>
+{% endblock %}
