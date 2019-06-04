@@ -1,0 +1,56 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+{% from "table/macro.njk" import govukTable %}
+
+{% block content %}
+{{ govukTable({
+  caption: "Following languages are supported for Census 2019 Reheresal",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Langauge"
+    },
+    {
+      text: "Document"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "Arabic  عربى"
+      },
+      {
+        text: "Census_Arbaic.pdf"
+      }
+    ],
+    [
+      {
+        text: "Bengali  বাঙালি"
+      },
+      {
+        text: "Census_Bengali.pdf"
+      }
+    ],
+    [
+      {
+        text: "Cantonese  粵語"
+      },
+      {
+        text: "Census_Cantonese.pdf"
+      }
+    ],
+	[
+      {
+        text: "French français"
+      },
+      {
+        text: "Census_French.pdf"
+      }
+    ]
+  ]
+  
+}) }}
+{% endblock %}
