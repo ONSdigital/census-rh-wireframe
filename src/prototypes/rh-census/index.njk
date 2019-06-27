@@ -1,0 +1,31 @@
+---
+title: Respondent Home
+group: Census
+version: 9.1.0
+layout: rh-census/views/_master
+---
+{% from "components/lists/_macro.njk" import onsList %}
+
+{% block main %}
+    {{ onsList({
+        "classes": "u-mt-l",
+        "itemsList": [
+            {
+                "text": "UAC Entry page",
+                "url":'/prototypes/rh-census/home.html'
+            },
+            {
+                "text": "Address not found page",
+                "url": '/prototypes/rh-census/address-not-found.html'
+            },
+            {
+                "text": "Address not eligible page",
+                "url": '/prototypes/rh-census/address-not-eligible.html'
+            },
+            {
+                "text": "Select survey and text message language",
+                "url": '/prototypes/rh-census/select-language.html'
+            }
+        ]
+    }) }}
+{% endblock %}
